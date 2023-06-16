@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Model
 {
-    public class Books : BaseData
+    public class Book : BaseData
     {
         [MaxLength(50, ErrorMessage = "Tytuł może zawierać maksymalnie 50 znaków ")]
         [Required(ErrorMessage = "Pole Tytuł musi być wypełnione")]
@@ -33,6 +33,14 @@ namespace API.Model
 
         [MaxLength(50, ErrorMessage = "Język może zawierać maksymalnie 50 znaków ")]
         [Display(Name = "Język")]
-        public string Language { get; set; }
+        public string? Language { get; set; }
+
+        public int AuthorId { get; set; }
+        [ForeignKey("AuthorId")]
+        public virtual Author? Author { get; set; }
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public virtual Category? Category { get; set; }
+        public virtual ICollection<Rating>? Rating { get; set; }
     }
 }

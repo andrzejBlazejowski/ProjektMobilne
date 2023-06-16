@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Model
 {
-    public class Ratings : BaseData
+    public class Rating : BaseData
     {
         [MaxLength(50, ErrorMessage = "Wartość oceny może zawierać maksymalnie 50 znaków ")]
         [Required(ErrorMessage = "Pole Wartość oceny musi być wypełnione")]
@@ -12,7 +12,12 @@ namespace API.Model
 
         [MaxLength(50, ErrorMessage = "Uwagi może zawierać maksymalnie 50 znaków ")]
         [Display(Name = "Uwagi")]
-        public int Notes { get; set; }
-
+        public string? Notes { get; set; }
+        public int ReaderId { get; set; }
+        [ForeignKey("ReaderId")]
+        public virtual Reader? Reader { get; set; }
+        public int BookId { get; set; }
+        [ForeignKey("BookId")]
+        public virtual Book? Book { get; set; }
     }
 }
