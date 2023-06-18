@@ -2,6 +2,8 @@
 using BookLoan.Service.Reference;
 using System;
 using System.Threading.Tasks;
+using BooksLoan.Helpers;
+using System.Linq;
 
 namespace BooksLoan.Services
 {
@@ -9,34 +11,34 @@ namespace BooksLoan.Services
     {
         public LoanDataStore()
             :base() { }
-        public override Task<Loan> AddItemToService(Loan item)
+        public override async Task<Loan> AddItemToService(Loan item)
         {
-            throw new NotImplementedException();
+            return await _service.LoanPOSTAsync(item);
         }
 
-        public override Task<bool> DeleteItemFromService(Loan item)
+        public override async Task<bool> DeleteItemFromService(Loan item)
         {
-            throw new NotImplementedException();
+            return await _service.LoanDELETEAsync(item.Id).HandleRequest();
         }
 
-        public override Task<Loan> Find(Loan item)
+        public override async Task<Loan> Find(Loan item)
         {
-            throw new NotImplementedException();
+            return await _service.LoanGETAsync(item.Id);
         }
 
-        public override Task<Loan> Find(int id)
+        public override async Task<Loan> Find(int id)
         {
-            throw new NotImplementedException();
+            return await _service.LoanGETAsync(id);
         }
 
-        public override Task RefreshListFromService()
+        public override async Task RefreshListFromService()
         {
-            throw new NotImplementedException();
+            items = _service.LoanAllAsync().Result.ToList();
         }
 
-        public override Task<bool> UpdateItemInService(Loan item)
+        public override async Task<bool> UpdateItemInService(Loan item)
         {
-            throw new NotImplementedException();
+            return await _service.LoanPUTAsync(item.Id, item).HandleRequest();
         }
     }
     

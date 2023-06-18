@@ -1,6 +1,8 @@
 ﻿using BookLoan.Service.Reference;
+using BooksLoan.Helpers;
 using BooksLoan.Services.Abstract;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BooksLoan.Services
@@ -11,35 +13,35 @@ namespace BooksLoan.Services
             : base()
         {
         }
-
-        public override Task<Rating> AddItemToService(Rating item)
+        public override async Task<Rating> AddItemToService(Rating item)
         {
-            throw new NotImplementedException();
+            return await _service.RatingPOSTAsync(item);
         }
 
-        public override Task<bool> DeleteItemFromService(Rating item)
+        public override async Task<bool> DeleteItemFromService(Rating item)
         {
-            throw new NotImplementedException();
+            return await _service.RatingDELETEAsync(item.Id).HandleRequest();
         }
 
-        public override Task<Rating> Find(Rating item)
+        public override async Task<Rating> Find(Rating item)
         {
-            throw new NotImplementedException();
+            return await _service.RatingGETAsync(item.Id);
         }
 
-        public override Task<Rating> Find(int id)
+        public override async Task<Rating> Find(int id)
         {
-            throw new NotImplementedException();
+            return await _service.RatingGETAsync(id);
         }
 
-        public override Task RefreshListFromService()
+        public override async Task RefreshListFromService()
         {
-            throw new NotImplementedException();
+            items = _service.RatingAllAsync().Result.ToList();
         }
 
-        public override Task<bool> UpdateItemInService(Rating item)
+        public override async Task<bool> UpdateItemInService(Rating item)
         {
-            throw new NotImplementedException();
+            return await _service.RatingPUTAsync(item.Id, item).HandleRequest();
         }
     }
+
 }
