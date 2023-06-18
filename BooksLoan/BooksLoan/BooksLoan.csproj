@@ -28,6 +28,66 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\ReaderV\ReaderDetailsPage.xaml.cs">
+      <DependentUpon>ReaderDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ReaderV\ReaderNewPage.xaml.cs">
+      <DependentUpon>ReaderNewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ReaderV\ReaderPage.xaml.cs">
+      <DependentUpon>ReaderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RatingV\RatingDetailsPage.xaml.cs">
+      <DependentUpon>RatingDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RatingV\RatingNewPage.xaml.cs">
+      <DependentUpon>RatingNewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RatingV\RatingPage.xaml.cs">
+      <DependentUpon>RatingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoacnV\LoanDetailsPage.xaml.cs">
+      <DependentUpon>LoanDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoacnV\LoanNewPage.xaml.cs">
+      <DependentUpon>LoanNewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoacnV\LoanPage.xaml.cs">
+      <DependentUpon>LoanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CategoryV\CategoryDetailsPage.xaml.cs">
+      <DependentUpon>CategoryDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CategoryV\CategoryNewPage.xaml.cs">
+      <DependentUpon>CategoryNewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CategoryV\CategoryPage.xaml.cs">
+      <DependentUpon>CategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\BookV\BookDetailsPage.xaml.cs">
+      <DependentUpon>BookDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\BookV\BookNewPage.xaml.cs">
+      <DependentUpon>BookNewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\BookV\BookPage.xaml.cs">
+      <DependentUpon>BookPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="OpenAPIs\swagger.json" ClassName="BookLoanServices" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\AuthorV\AuthorDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AuthorV\AuthorNewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AuthorV\AuthorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

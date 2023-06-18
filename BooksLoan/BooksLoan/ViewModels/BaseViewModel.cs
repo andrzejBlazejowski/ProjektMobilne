@@ -10,6 +10,54 @@ namespace BooksLoan.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+
+        #region Fields
+        protected int id;
+        protected string description;
+        protected bool isActive;
+        protected DateTime lastModificationDate;
+        protected int lastModifiedBy;
+        protected DateTime creationDate;
+        protected int createdBy;
+        #endregion Fields
+        #region Properties
+        public int Id
+        {
+            get => id;
+            set => SetProperty(ref id, value);
+        }
+        public string Description
+        {
+            get => description;
+            set => SetProperty(ref description, value);
+        }
+        public bool IsActive
+        {
+            get => isActive;
+            set => SetProperty(ref isActive, value);
+        }
+        public DateTime LastModificationDate
+        {
+            get => lastModificationDate;
+            set => SetProperty(ref lastModificationDate, value);
+        }
+        public int LastModifiedBy
+        {
+            get => lastModifiedBy;
+            set => SetProperty(ref lastModifiedBy, value);
+        }
+        public DateTime CreationDate
+        {
+            get => creationDate;
+            set => SetProperty(ref creationDate, value);
+        }
+        public int CreatedBy
+        {
+            get => createdBy;
+            set => SetProperty(ref createdBy, value);
+        }
+        #endregion Properties
+
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
         bool isBusy = false;
