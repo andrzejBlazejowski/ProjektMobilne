@@ -16,7 +16,7 @@ namespace API.Model
 
         [MaxLength(150, ErrorMessage = "Data darmowego wypożyczenia może zawierać maksymalnie 150 znaków ")]
         [Display(Name = "Data darmowego wypożyczenia")]
-        public string? FreeDate { get; set; }
+        public DateTime? FreeDate { get; set; }
 
         public int ReaderId { get; set; }
         [ForeignKey("ReaderId")]

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookLoan.Service.Reference;
+using System;
 using System.Threading.Tasks;
 
 namespace BooksLoan.Helpers
@@ -17,6 +18,12 @@ namespace BooksLoan.Helpers
                 Console.WriteLine(ex.Message);
                 return false;
             }
+        }
+        public static string GetAuthorAcronym(Author author)
+        {
+            return author.FirstName.Substring(0, 1) +
+                (author.MiddleName != null ? " " + author.FirstName.Substring(0, 1) + " " : " ") +
+                author.LastName;
         }
     }
 }
