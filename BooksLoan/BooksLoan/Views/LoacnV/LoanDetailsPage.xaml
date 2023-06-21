@@ -5,10 +5,17 @@
     <ContentPage.Content>
         <StackLayout>
 
-
             <Label Text="Id" FontSize="Medium" />
             <Label Text="{Binding Id, Mode=TwoWay}" FontSize="Medium" />
 
+            <Label Text="LoanDate" FontSize="Medium" />
+            <Label Text="{Binding LoanDate, Mode=TwoWay}" FontSize="Medium" />
+
+            <Label Text="ReturnDate" FontSize="Medium" />
+            <Label Text="{Binding ReturnDate, Mode=TwoWay}" FontSize="Medium" />
+
+            <Label Text="FreeDate" FontSize="Medium" />
+            <Label Text="{Binding FreeDate, Mode=TwoWay}" FontSize="Medium" />
 
             <!--standard fields-->
             <Label Text="Description" FontSize="Medium" />
