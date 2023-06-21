@@ -11,6 +11,7 @@
 
             <Label Text="Name" FontSize="Medium" />
             <Label Text="{Binding Name, Mode=TwoWay}" FontSize="Medium" />
+            
             <Label Text="Description" FontSize="Medium" />
             <Label Text="{Binding Description, Mode=TwoWay}" FontSize="Medium" />
 
