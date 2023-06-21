@@ -4,9 +4,18 @@
              x:Class="BooksLoan.Views.RatingV.RatingNewPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="new Rating page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+
+            <Label Text="Value" FontSize="Medium" />
+            <Entry Text="{Binding Value, Mode=TwoWay}" FontSize="Medium" />
+            
+            <Label Text="Notes" FontSize="Medium" />
+            <Entry Text="{Binding Notes, Mode=TwoWay}" FontSize="Medium" />
+            
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
