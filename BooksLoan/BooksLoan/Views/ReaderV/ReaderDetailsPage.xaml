@@ -5,10 +5,29 @@
     <ContentPage.Content>
         <StackLayout>
 
-
             <Label Text="Id" FontSize="Medium" />
             <Label Text="{Binding Id, Mode=TwoWay}" FontSize="Medium" />
 
+            <Label Text="FirstName" FontSize="Medium" />
+            <Label Text="{Binding FirstName, Mode=TwoWay}" FontSize="Medium" />
+            
+            <Label Text="LastName" FontSize="Medium" />
+            <Label Text="{Binding LastName, Mode=TwoWay}" FontSize="Medium" />
+            
+            <Label Text="MiddleName" FontSize="Medium" />
+            <Label Text="{Binding MiddleName, Mode=TwoWay}" FontSize="Medium" />
+            
+            <Label Text="Email" FontSize="Medium" />
+            <Label Text="{Binding Email, Mode=TwoWay}" FontSize="Medium" />
+            
+            <Label Text="Dob" FontSize="Medium" />
+            <Label Text="{Binding Dob, Mode=TwoWay}" FontSize="Medium" />
+            
+            <Label Text="Nick" FontSize="Medium" />
+            <Label Text="{Binding Nick, Mode=TwoWay}" FontSize="Medium" />
+            
+            <Label Text="Nationality" FontSize="Medium" />
+            <Label Text="{Binding Nationality, Mode=TwoWay}" FontSize="Medium" />
 
             <!--standard fields-->
             <Label Text="Description" FontSize="Medium" />
