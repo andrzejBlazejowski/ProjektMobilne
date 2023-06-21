@@ -9,6 +9,10 @@
             <Label Text="Id" FontSize="Medium" />
             <Label Text="{Binding Id, Mode=TwoWay}" FontSize="Medium" />
 
+            <Label Text="Value" FontSize="Medium" />
+            <Label Text="{Binding Value, Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Notes" FontSize="Medium" />
+            <Label Text="{Binding Notes, Mode=TwoWay}" FontSize="Medium" />
 
             <!--standard fields-->
             <Label Text="Description" FontSize="Medium" />
