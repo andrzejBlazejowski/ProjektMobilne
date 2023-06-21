@@ -14,11 +14,6 @@
                 SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Book">
-                        <Label Text="{Binding Id}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="12" />
                         <StackLayout Padding="10" x:DataType="model:Book">
                             <Label Text="{Binding Title}" 
                                 LineBreakMode="NoWrap" 
