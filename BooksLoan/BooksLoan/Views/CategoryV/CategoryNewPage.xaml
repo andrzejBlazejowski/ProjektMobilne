@@ -9,7 +9,7 @@
             <Entry Text="{Binding Name, Mode=TwoWay}" FontSize="Medium" />
 
             <Label Text="Description" FontSize="Medium" />
-            <Entry Text="{Binding Description, Mode=TwoWay}" FontSize="Medium"criptio />
+            <Entry Text="{Binding Description, Mode=TwoWay}" FontSize="Medium"/>
             
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>

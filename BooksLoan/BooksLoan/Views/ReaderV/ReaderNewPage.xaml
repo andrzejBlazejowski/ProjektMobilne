@@ -5,6 +5,27 @@
     <ContentPage.Content>
         <StackLayout>
 
+            <Label Text="FirstName" FontSize="Medium" />
+            <Entry Text="{Binding FirstName, Mode=TwoWay}" FontSize="Medium" />
+
+            <Label Text="LastName" FontSize="Medium" />
+            <Entry Text="{Binding LastName, Mode=TwoWay}" FontSize="Medium" />
+
+            <Label Text="MiddleName" FontSize="Medium" />
+            <Entry Text="{Binding MiddleName, Mode=TwoWay}" FontSize="Medium" />
+
+            <Label Text="Email" FontSize="Medium" />
+            <Entry Text="{Binding Email, Mode=TwoWay}" FontSize="Medium" />
+
+            <Label Text="Dob" FontSize="Medium" />
+            <Entry Text="{Binding Dob, Mode=TwoWay}" FontSize="Medium" />
+
+            <Label Text="Nick" FontSize="Medium" />
+            <Entry Text="{Binding Nick, Mode=TwoWay}" FontSize="Medium" />
+
+            <Label Text="Nationality" FontSize="Medium" />
+            <Entry Text="{Binding Nationality, Mode=TwoWay}" FontSize="Medium" />
+
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
