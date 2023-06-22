@@ -12,8 +12,13 @@ namespace BooksLoan
         public App()
         {
             InitializeComponent();
+            DependencyService.Register<AuthorDataStore>();
+            DependencyService.Register<BookDataStore>();
+            DependencyService.Register<CategoryDataStore>();
+            DependencyService.Register<LoanDataStore>();
+            DependencyService.Register<RatingDataStore>();
+            DependencyService.Register<ReaderDataStore>();
 
-            //DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 

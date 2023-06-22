@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BooksLoan.ViewModels.LoanVM;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,9 +8,16 @@ namespace BooksLoan.Views.LoanV
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoanPage : ContentPage
     {
+        private LoanViewModel _viewModel;
         public LoanPage()
         {
             InitializeComponent();
+            BindingContext = _viewModel = new LoanViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
         }
     }
 }

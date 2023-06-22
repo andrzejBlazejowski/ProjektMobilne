@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BooksLoan.ViewModels.BookVM"
              xmlns:model="clr-namespace:BookLoan.Service.Reference"
+             Title="{Binding Title}"
              x:Class="BooksLoan.Views.BookV.BookPage">
-        <ContentPage.ToolbarItems>
-            <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Book" Command="{Binding AddItemCommand}" />
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
         </ContentPage.ToolbarItems>
 
     <RefreshView x:DataType="local:BookViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">

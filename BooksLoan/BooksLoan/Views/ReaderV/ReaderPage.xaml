@@ -2,56 +2,56 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BooksLoan.ViewModels.ReaderVM"
+             Title="{Binding Title}"
              xmlns:model="clr-namespace:BookLoan.Service.Reference"
              x:Class="BooksLoan.Views.ReaderV.ReaderPage">
-    <ContentPage.Content>
-        <ContentPage.ToolbarItems>
-            <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
-        </ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
 
-        <RefreshView x:DataType="local:ReaderViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <CollectionView x:Name="ItemsListView"
-                ItemsSource="{Binding Items}"
-                SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="10" x:DataType="model:Reader">
-                            
-                            <Label Text="{Binding Id}"
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemTextStyle}"
-                            FontSize="12" />
-                            
-                            <Label Text="{Binding FirstName}"
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemTextStyle}"
-                            FontSize="12" />
+    <RefreshView x:DataType="local:ReaderViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="ItemsListView"
+            ItemsSource="{Binding Items}"
+            SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10" x:DataType="model:Reader">
 
-                            <Label Text="{Binding LastName}"
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="12" />
+                        <Label Text="{Binding Id}"
+                        LineBreakMode="NoWrap"
+                        Style="{DynamicResource ListItemTextStyle}"
+                        FontSize="12" />
 
-                            <Label Text="{Binding Email}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="12" />
+                        <Label Text="{Binding FirstName}"
+                        LineBreakMode="NoWrap"
+                        Style="{DynamicResource ListItemTextStyle}"
+                        FontSize="12" />
 
-                            <Label Text="{Binding Nick}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="12" />
+                        <Label Text="{Binding LastName}"
+                        LineBreakMode="NoWrap" 
+                        Style="{DynamicResource ListItemTextStyle}" 
+                        FontSize="12" />
 
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer 
-                                NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ReaderViewModel}}, Path=ItemTapped}"		
-                                CommandParameter="{Binding .}">
-                                </TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </RefreshView>
+                        <Label Text="{Binding Email}" 
+                        LineBreakMode="NoWrap" 
+                        Style="{DynamicResource ListItemTextStyle}" 
+                        FontSize="12" />
+
+                        <Label Text="{Binding Nick}" 
+                        LineBreakMode="NoWrap" 
+                        Style="{DynamicResource ListItemTextStyle}" 
+                        FontSize="12" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            NumberOfTapsRequired="1"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:ReaderViewModel}}, Path=ItemTapped}"		
+                            CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
 </ContentPage>

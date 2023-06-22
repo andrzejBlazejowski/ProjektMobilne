@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BooksLoan.ViewModels.LoanVM;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,6 +11,7 @@ namespace BooksLoan.Views.LoanV
         public LoanDetailsPage()
         {
             InitializeComponent();
+            BindingContext = new LoanDetailsViewModel();
         }
     }
 }
