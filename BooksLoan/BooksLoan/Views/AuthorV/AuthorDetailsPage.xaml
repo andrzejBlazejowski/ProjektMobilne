@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="{Binding Title}"
-             x:Class="BooksLoan.Views.AuthorV.EditBookPage">
+             x:Class="BooksLoan.Views.AuthorV.AuthorDetailsPage">
     <ContentPage.Content>
         <ScrollView>
         <StackLayout Spacing="5" Padding="15">
@@ -46,6 +46,7 @@
 
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Edit" Command="{Binding EditCommand}" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Delete" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand"></Button>
             </StackLayout>
             </StackLayout>

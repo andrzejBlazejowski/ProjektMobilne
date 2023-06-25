@@ -63,7 +63,8 @@ namespace BooksLoan.ViewModels.AothorVM
 
         protected async override void OnEdit()
         {
-            await Shell.Current.GoToAsync($"{nameof(EditBookPage)}?{nameof(EditAuthorViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(AuthorEditPage)}?{nameof(EditAuthorViewModel.ItemId)}={Id}");
         }
+
     }
 }

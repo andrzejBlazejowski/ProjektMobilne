@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             x:Class="BooksLoan.Views.LoanV.LoanEditPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="LoanDate" FontSize="Medium" />
+            <DatePicker MinimumDate="{Binding MinDate, Mode=OneWay}"
+                    MaximumDate="{Binding MaxDate, Mode=OneWay}"
+                    Date="{Binding LoanDate, Mode=TwoWay}" />
+
+            <Label Text="ReturnDate" FontSize="Medium" />
+            <DatePicker MinimumDate="{Binding Today, Mode=OneWay}"
+                    Date="{Binding ReturnDate, Mode=TwoWay}" />
+
+            <Label Text="FreeDate" FontSize="Medium" />
+            <DatePicker MinimumDate="{Binding Today, Mode=OneWay}"
+                    Date="{Binding FreeDate, Mode=TwoWay}" />
+
+
+            <Picker Title="Select Reader"
+                    ItemsSource="{Binding Readers}"
+                    ItemDisplayBinding="{Binding LastName}"
+                    SelectedItem="{Binding SelectedReader}"
+                    FontSize="Medium" Margin="0" />
+
+            <Picker Title="Select Book"
+                    ItemsSource="{Binding Books}"
+                    ItemDisplayBinding="{Binding Title}"
+                    SelectedItem="{Binding SelectedBook}"
+                    FontSize="Medium" Margin="0" />
+            
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Edit" Command="{Binding EditCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

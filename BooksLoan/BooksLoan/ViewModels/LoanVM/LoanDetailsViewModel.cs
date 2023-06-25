@@ -1,5 +1,8 @@
 ﻿using BookLoan.Service.Reference;
+using BooksLoan.ViewModels.Abstract;
+using BooksLoan.Views.LoanV;
 using System;
+using Xamarin.Forms;
 
 namespace BooksLoan.ViewModels.LoanVM
 {
@@ -42,11 +45,11 @@ namespace BooksLoan.ViewModels.LoanVM
 
             LoanDate = item.LoanDate.DateTime;
             ReturnDate = item.ReturnDate?.DateTime;
-            //FreeDate = item.FreeDate?.DateTime;
+            FreeDate = item.FreeDate?.DateTime;
         }
         protected async override void OnEdit()
         {
-            //await Shell.Current.GoToAsync($"{nameof(EditLoanPage)}?{nameof(EditLoanViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(LoanEditPage)}?{nameof(EditLoanViewModel.ItemId)}={Id}");
         }
     }
 }

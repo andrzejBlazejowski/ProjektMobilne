@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             x:Class="BooksLoan.Views.CategoryV.CategoryEditPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Name" FontSize="Medium" />
+            <Entry Text="{Binding Name, Mode=TwoWay}" FontSize="Medium" />
+
+            <Label Text="Description" FontSize="Medium" />
+            <Entry Text="{Binding Description, Mode=TwoWay}" FontSize="Medium"/>
+            
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Edit" Command="{Binding EditCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

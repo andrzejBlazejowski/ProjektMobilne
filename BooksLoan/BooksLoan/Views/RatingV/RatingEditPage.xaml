@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Edit Item"
+             x:Class="BooksLoan.Views.RatingV.RatingEditPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <Label Text="Value" FontSize="Medium" />
+            <Entry Text="{Binding Value, Mode=TwoWay}" FontSize="Medium" />
+            
+            <Label Text="Notes" FontSize="Medium" />
+            <Entry Text="{Binding Notes, Mode=TwoWay}" FontSize="Medium" />
+            
+            <Picker Title="Select Reader"
+                    ItemsSource="{Binding Readers}"
+                    ItemDisplayBinding="{Binding FirstName}"
+                    SelectedItem="{Binding SelectedReader}"
+                    FontSize="Medium" Margin="0" />
+            
+            <Picker Title="Select Book"
+                    ItemsSource="{Binding Books}"
+                    ItemDisplayBinding="{Binding Title}"
+                    SelectedItem="{Binding SelectedBook}"
+                    FontSize="Medium" Margin="0" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Edit" Command="{Binding EditCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

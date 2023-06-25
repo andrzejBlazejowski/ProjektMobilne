@@ -1,7 +1,5 @@
 ﻿using BookLoan.Service.Reference;
-using BooksLoan.Models;
-using BooksLoan.ViewModels.AothorVM;
-using BooksLoan.Views.AuthorV;
+using BooksLoan.Views.BookV;
 using Xamarin.Forms;
 
 namespace BooksLoan.ViewModels.BookVM
@@ -57,7 +55,7 @@ namespace BooksLoan.ViewModels.BookVM
         }
         protected async override void OnEdit()
         {
-            //await Shell.Current.GoToAsync($"{nameof(EditBookPage)}?{nameof(EditBookViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(BookEditPage)}?{nameof(EditBookViewModel.ItemId)}={Id}");
         }
     }
 }

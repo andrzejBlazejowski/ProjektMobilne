@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace BooksLoan.ViewModels.ReaderVM
 {
-    public class ReaderDetailsViewModel : AItemDetailsViewModel<Reader>
+    public class EditReaderViewModel : AEditViewModel<Reader>
     {
         #region Fields
         private string firstName;
@@ -53,10 +53,37 @@ namespace BooksLoan.ViewModels.ReaderVM
             get => nationality;
             set => SetProperty(ref nationality, value);
         }
-
         #endregion Properties
-        public ReaderDetailsViewModel() : base()
+        public EditReaderViewModel()
+            : base()
         {
+        }
+        public override Reader SetItem()
+        {
+            return new Reader
+            {
+                CreationDate = DateTime.Now,
+                CreatedBy = 0,
+                LastModificationDate = DateTime.Now,
+                LastModifiedBy = 0,
+                IsActive = true,
+
+                Id = Id,
+                FirstName = FirstName,
+                LastName = LastName,
+                MiddleName = MiddleName,
+                Nick = Nick,
+                Email = Email,
+
+            };
+        }
+        public override bool ValidateSave()
+        {
+            return !String.IsNullOrEmpty(FirstName);
+        }
+        public async override void RedirectBack()
+        {
+            await Shell.Current.GoToAsync($"//ReaderPage/{nameof(ReaderDetailsPage)}?{nameof(ReaderDetailsViewModel.ItemId)}={Id}");
         }
         public override void LoadProperties(Reader item)
         {
@@ -72,12 +99,8 @@ namespace BooksLoan.ViewModels.ReaderVM
             MiddleName = item.MiddleName;
             Nick = item.Nick;
             Email = item.Email;
-            //Dob = item.Dob;
+            Dob = DateTime.Parse(item.Dob);
             Nationality = item.Nationality;
-        }
-        protected async override void OnEdit()
-        {
-            await Shell.Current.GoToAsync($"{nameof(ReaderEditPage)}?{nameof(EditReaderViewModel.ItemId)}={Id}");
         }
     }
 }

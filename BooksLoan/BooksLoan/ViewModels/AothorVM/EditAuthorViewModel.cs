@@ -1,6 +1,9 @@
 ﻿using BookLoan.Service.Reference;
+using BooksLoan.Models;
 using BooksLoan.ViewModels.Abstract;
+using BooksLoan.Views.AuthorV;
 using System;
+using Xamarin.Forms;
 
 namespace BooksLoan.ViewModels.AothorVM
 {
@@ -74,6 +77,7 @@ namespace BooksLoan.ViewModels.AothorVM
                 LastModifiedBy = 0,
                 IsActive = true,
 
+                Id = Id,
                 FirstName = FirstName,
                 LastName = LastName,
                 MiddleName = MiddleName,
@@ -102,6 +106,11 @@ namespace BooksLoan.ViewModels.AothorVM
             MiddleName = item.MiddleName;
             Pseudonym = item.Pseudonym;
             Nationality = item.Nationality;
+        }
+
+        public async override void RedirectBack()
+        {
+            await Shell.Current.GoToAsync($"//AuthorPage/{nameof(AuthorDetailsPage)}?{nameof(AuthorDetailsViewModel.ItemId)}={Id}");
         }
     }
 }

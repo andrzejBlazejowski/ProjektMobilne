@@ -1,4 +1,6 @@
 ﻿using BooksLoan.Services.Abstract;
+using BooksLoan.ViewModels.AothorVM;
+using BooksLoan.Views.AuthorV;
 using Xamarin.Forms;
 
 namespace BooksLoan.ViewModels.Abstract
@@ -8,30 +10,24 @@ namespace BooksLoan.ViewModels.Abstract
         public IDataStore<T> DataStore => DependencyService.Get<IDataStore<T>>();
         public AEditViewModel()
         {
-            SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
             this.PropertyChanged +=
-                (_, __) => SaveCommand.ChangeCanExecute();
+                (_, __) => EditCommand.ChangeCanExecute();
         }
         public abstract bool ValidateSave();
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
         private async void OnCancel()
         {
-            // This will pop the current page off the navigation stack
-            await Shell.Current.GoToAsync("..");
+            RedirectBack();
         }
         public abstract T SetItem();
-        private async void OnSave()
-        {
-            await DataStore.UpdateItemAsync(SetItem());
-            // This will pop the current page off the navigation stack
-            await Shell.Current.GoToAsync("..");
-        }
-
+        public abstract void RedirectBack();
         protected async override void OnEdit()
         {
-            await Shell.Current.GoToAsync("..");
+            await DataStore.UpdateItemAsync(SetItem());
+
+            RedirectBack();
         }
     }
 }

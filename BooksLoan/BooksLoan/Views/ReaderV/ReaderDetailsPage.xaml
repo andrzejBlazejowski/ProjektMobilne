@@ -53,6 +53,7 @@
 
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="Edit" Command="{Binding EditCommand}" HorizontalOptions="FillAndExpand"></Button>
                     <Button Text="Delete" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand"></Button>
                 </StackLayout>
             </StackLayout>

@@ -1,4 +1,7 @@
 ﻿using BookLoan.Service.Reference;
+using BooksLoan.ViewModels.Abstract;
+using BooksLoan.Views.RatingV;
+using Xamarin.Forms;
 
 namespace BooksLoan.ViewModels.RatingVM
 {
@@ -37,7 +40,7 @@ namespace BooksLoan.ViewModels.RatingVM
         }
         protected async override void OnEdit()
         {
-            //await Shell.Current.GoToAsync($"{nameof(EditRatingPage)}?{nameof(EditRatingViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(RatingEditPage)}?{nameof(EditRatingViewModel.ItemId)}={Id}");
         }
     }
 }

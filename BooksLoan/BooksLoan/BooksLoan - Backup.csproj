@@ -31,8 +31,23 @@
     <Compile Update="Views\AuthorV\AuthorEditPage.xaml.cs">
       <DependentUpon>AuthorEditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\BookV\BookEditPage.xaml.cs">
+      <DependentUpon>BookEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CategoryV\CategoryEditPage.xaml.cs">
+      <DependentUpon>CategoryEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoacnV\LoanEditPage.xaml.cs">
+      <DependentUpon>LoanEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RatingV\RatingEditPage.xaml.cs">
+      <DependentUpon>RatingEditPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ReaderV\ReaderDetailsPage.xaml.cs">
       <DependentUpon>ReaderDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ReaderV\ReaderEditPage.xaml.cs">
+      <DependentUpon>ReaderEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ReaderV\ReaderNewPage.xaml.cs">
       <DependentUpon>ReaderNewPage.xaml</DependentUpon>
@@ -75,9 +90,6 @@
     </Compile>
     <Compile Update="Views\BookV\BookPage.xaml.cs">
       <DependentUpon>BookPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\ReturnBookV\ReturnBookPage.xaml.cs">
-      <DependentUpon>ReturnBookPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

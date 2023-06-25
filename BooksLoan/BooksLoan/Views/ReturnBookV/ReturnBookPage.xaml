@@ -2,11 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BooksLoan.ViewModels.LoanVM"
-             Title="{Binding Title}"
+             Title="Return Book"
              xmlns:model="clr-namespace:BookLoan.Service.Reference"
              x:Class="BooksLoan.Views.LoanV.LoanPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+        <ToolbarItem Text="Return" Command="{Binding ReturnBookCommand}" />
     </ContentPage.ToolbarItems>
     
     <RefreshView x:DataType="local:LoanViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
