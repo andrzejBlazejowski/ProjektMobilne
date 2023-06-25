@@ -21,7 +21,7 @@ namespace BooksLoan
 
             Routing.RegisterRoute(nameof(AuthorPage), typeof(AuthorPage));
             Routing.RegisterRoute(nameof(AuthorNewPage), typeof(AuthorNewPage));
-            Routing.RegisterRoute(nameof(AuthorDetailsPage), typeof(AuthorDetailsPage));
+            Routing.RegisterRoute(nameof(EditBookPage), typeof(EditBookPage));
 
             Routing.RegisterRoute(nameof(BookPage), typeof(BookPage));
             Routing.RegisterRoute(nameof(BookNewPage), typeof(BookNewPage));

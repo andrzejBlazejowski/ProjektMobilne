@@ -1,4 +1,8 @@
 ﻿using BookLoan.Service.Reference;
+using BooksLoan.Models;
+using BooksLoan.ViewModels.AothorVM;
+using BooksLoan.Views.AuthorV;
+using Xamarin.Forms;
 
 namespace BooksLoan.ViewModels.BookVM
 {
@@ -50,6 +54,10 @@ namespace BooksLoan.ViewModels.BookVM
             Author = Helpers.Helpers.GetAuthorAcronym(item.Author);
             Language = item.Language;
             Category = item.Category.Name;
-    }
+        }
+        protected async override void OnEdit()
+        {
+            //await Shell.Current.GoToAsync($"{nameof(EditBookPage)}?{nameof(EditBookViewModel.ItemId)}={item.Id}");
+        }
     }
 }

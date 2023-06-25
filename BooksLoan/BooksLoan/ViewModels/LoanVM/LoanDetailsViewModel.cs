@@ -44,5 +44,9 @@ namespace BooksLoan.ViewModels.LoanVM
             ReturnDate = item.ReturnDate?.DateTime;
             //FreeDate = item.FreeDate?.DateTime;
         }
+        protected async override void OnEdit()
+        {
+            //await Shell.Current.GoToAsync($"{nameof(EditLoanPage)}?{nameof(EditLoanViewModel.ItemId)}={item.Id}");
+        }
     }
 }

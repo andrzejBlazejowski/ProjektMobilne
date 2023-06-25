@@ -37,5 +37,9 @@ namespace BooksLoan.ViewModels.CategoryVM
             Name = item.Name;
             Description = item.Description;
         }
+        protected async override void OnEdit()
+        {
+            //await Shell.Current.GoToAsync($"{nameof(EditCategoryPage)}?{nameof(EditCategoryViewModel.ItemId)}={item.Id}");
+        }
     }
 }

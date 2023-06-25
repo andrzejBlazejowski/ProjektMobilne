@@ -4,7 +4,7 @@ using System;
 
 namespace BooksLoan.ViewModels.AothorVM
 {
-    public class EditAuthorViewModel : ANewViewModel<Author>
+    public class EditAuthorViewModel : AEditViewModel<Author>
     {
         #region Fields
         private string firstName;
@@ -68,8 +68,8 @@ namespace BooksLoan.ViewModels.AothorVM
         {
             return new Author
             {
-                CreationDate = DateTime.Now,
-                CreatedBy = 0,
+                CreationDate = CreationDate,
+                CreatedBy = CreatedBy,
                 LastModificationDate = DateTime.Now,
                 LastModifiedBy = 0,
                 IsActive = true,
@@ -86,6 +86,22 @@ namespace BooksLoan.ViewModels.AothorVM
         public override bool ValidateSave()
         {
             return !String.IsNullOrEmpty(FirstName);
+        }
+
+        public override void LoadProperties(Author item)
+        {
+            CreatedBy = item.CreatedBy;
+            CreationDate = item.CreationDate.DateTime;
+            Description = item.Description;
+            Id = item.Id;
+            IsActive = item.IsActive;
+            LastModifiedBy = item.LastModifiedBy;
+            LastModificationDate = item.LastModificationDate.DateTime;
+            FirstName = item.FirstName;
+            LastName = item.LastName;
+            MiddleName = item.MiddleName;
+            Pseudonym = item.Pseudonym;
+            Nationality = item.Nationality;
         }
     }
 }

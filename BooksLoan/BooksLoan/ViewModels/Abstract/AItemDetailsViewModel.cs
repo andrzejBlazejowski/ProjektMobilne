@@ -12,12 +12,14 @@ namespace BooksLoan.ViewModels
         {
             CancelCommand = new Command(OnCancel);
             DeleteCommand = new Command(OnDelete);
+            EditCommand = new Command(OnEdit);
         }
 
         public IDataStore<T> DataStore => DependencyService.Get<IDataStore<T>>();
 
         public Command DeleteCommand { get; }
         public Command CancelCommand { get; }
+        public Command EditCommand { get; }
         public abstract void LoadProperties(T item);
         private async void OnDelete()
         {
@@ -32,6 +34,7 @@ namespace BooksLoan.ViewModels
             await Shell.Current.GoToAsync("..");
         }
 
+        protected abstract void OnEdit();
 
         private int itemId;
         public int ItemId

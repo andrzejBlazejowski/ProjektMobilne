@@ -6,9 +6,9 @@ using Xamarin.Forms.Xaml;
 namespace BooksLoan.Views.AuthorV
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AuthorDetailsPage : ContentPage
+    public partial class EditBookPage : ContentPage
     {
-        public AuthorDetailsPage()
+        public EditBookPage()
         {
             InitializeComponent();
             BindingContext = new AuthorDetailsViewModel();

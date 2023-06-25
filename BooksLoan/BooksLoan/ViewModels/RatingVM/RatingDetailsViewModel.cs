@@ -35,5 +35,9 @@ namespace BooksLoan.ViewModels.RatingVM
             Value = item.Value;
             Notes = item.Notes;
         }
+        protected async override void OnEdit()
+        {
+            //await Shell.Current.GoToAsync($"{nameof(EditRatingPage)}?{nameof(EditRatingViewModel.ItemId)}={item.Id}");
+        }
     }
 }

@@ -72,5 +72,9 @@ namespace BooksLoan.ViewModels.ReaderVM
             //Dob = item.Dob;
             Nationality = item.Nationality;
         }
+        protected async override void OnEdit()
+        {
+            //await Shell.Current.GoToAsync($"{nameof(EditReaderPage)}?{nameof(EditReaderViewModel.ItemId)}={item.Id}");
+        }
     }
 }
