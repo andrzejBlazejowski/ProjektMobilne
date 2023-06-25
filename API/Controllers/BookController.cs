@@ -51,6 +51,8 @@ namespace API.Controllers
                 return NotFound();
             }
 
+            book = associationsHelper.getBookWithAssociations(book, _context);
+
             return book;
         }
 

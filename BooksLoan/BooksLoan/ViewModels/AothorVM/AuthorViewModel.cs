@@ -15,7 +15,7 @@ namespace BooksLoan.ViewModels.AothorVM
         {
             if (item == null)
                 return;
-            await Shell.Current.GoToAsync($"{nameof(AuthorDetailsPage)}?{nameof(AuthorDetailsViewModel.Id)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(AuthorDetailsPage)}?{nameof(AuthorDetailsViewModel.ItemId)}={item.Id}");
         }
 
         public override void GoToAddPage()

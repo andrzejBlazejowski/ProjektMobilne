@@ -34,6 +34,7 @@ namespace BooksLoan.ViewModels.BookVM
         #endregion Properties
         public BookDetailsViewModel() : base()
         {
+            var id = ItemId;
         }
         public override void LoadProperties(Book item)
         {

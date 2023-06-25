@@ -15,7 +15,7 @@ namespace BooksLoan.ViewModels.RatingVM
         {
             if (item == null)
                 return;
-            await Shell.Current.GoToAsync($"{nameof(RatingDetailsPage)}?{nameof(RatingDetailsViewModel.Id)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(RatingDetailsPage)}?{nameof(RatingDetailsViewModel.ItemId)}={item.Id}");
         }
 
         public override void GoToAddPage()

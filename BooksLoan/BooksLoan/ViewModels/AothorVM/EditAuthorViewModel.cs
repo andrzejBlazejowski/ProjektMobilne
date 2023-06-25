@@ -4,7 +4,7 @@ using System;
 
 namespace BooksLoan.ViewModels.AothorVM
 {
-    public class NewAuthorViewModel : ANewViewModel<Author>
+    public class EditAuthorViewModel : ANewViewModel<Author>
     {
         #region Fields
         private string firstName;
@@ -60,7 +60,7 @@ namespace BooksLoan.ViewModels.AothorVM
             get => DateTime.Now;
         }
         #endregion Properties
-        public NewAuthorViewModel()
+        public EditAuthorViewModel()
             : base()
         {
         }

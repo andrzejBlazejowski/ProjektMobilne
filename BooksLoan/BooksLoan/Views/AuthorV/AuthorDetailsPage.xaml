@@ -4,6 +4,7 @@
              Title="{Binding Title}"
              x:Class="BooksLoan.Views.AuthorV.AuthorDetailsPage">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Spacing="5" Padding="15">
             
             <Label Text="Id" FontSize="Medium" />
@@ -47,6 +48,7 @@
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Delete" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand"></Button>
             </StackLayout>
-        </StackLayout>
+            </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -83,7 +83,7 @@ namespace BooksLoan.ViewModels.BookVM
         }
         public DateTime MinDate
         {
-            get => new DateTime(1923, 12, 31);
+            get => new DateTime(1969, 12, 31);
         }
         public DateTime MaxDate
         {

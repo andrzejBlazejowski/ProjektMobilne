@@ -8,14 +8,31 @@
         <StackLayout>
 
             <Label Text="LoanDate" FontSize="Medium" />
-            <Entry Text="{Binding LoanDate, Mode=TwoWay}" FontSize="Medium" />
+            <DatePicker MinimumDate="{Binding MinDate, Mode=OneWay}"
+                    MaximumDate="{Binding MaxDate, Mode=OneWay}"
+                    Date="{Binding LoanDate, Mode=TwoWay}" />
 
             <Label Text="ReturnDate" FontSize="Medium" />
-            <Entry Text="{Binding ReturnDate, Mode=TwoWay}" FontSize="Medium" />
+            <DatePicker MinimumDate="{Binding Today, Mode=OneWay}"
+                    Date="{Binding ReturnDate, Mode=TwoWay}" />
 
             <Label Text="FreeDate" FontSize="Medium" />
-            <Entry Text="{Binding FreeDate, Mode=TwoWay}" FontSize="Medium" />
+            <DatePicker MinimumDate="{Binding Today, Mode=OneWay}"
+                    Date="{Binding FreeDate, Mode=TwoWay}" />
 
+
+            <Picker Title="Select Reader"
+                    ItemsSource="{Binding Readers}"
+                    ItemDisplayBinding="{Binding LastName}"
+                    SelectedItem="{Binding SelectedReader}"
+                    FontSize="Medium" Margin="0" />
+
+            <Picker Title="Select Book"
+                    ItemsSource="{Binding Books}"
+                    ItemDisplayBinding="{Binding Title}"
+                    SelectedItem="{Binding SelectedBook}"
+                    FontSize="Medium" Margin="0" />
+            
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>

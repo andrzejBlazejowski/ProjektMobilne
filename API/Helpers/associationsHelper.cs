@@ -47,12 +47,14 @@ namespace API.Helpers
                 loan.Book = getBookWithAssociations(loan.Book, _context);
             }
             loan.Book.Rating = new List<Rating>();
+            //loan.Book = new List<Loan>();
 
             if (loan.Reader == null)
             {
                 loan.Reader = _context.Reader.FirstOrDefault(book => book.Id == loan.ReaderId);
             }
             loan.Reader.Rating = new List<Rating>();
+            loan.Reader.Loan = new List<Loan>();
 
             return loan;
         }

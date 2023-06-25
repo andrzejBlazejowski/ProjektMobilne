@@ -4,43 +4,47 @@
              Title="{Binding Title}"
              x:Class="BooksLoan.Views.BookV.BookDetailsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Id" FontSize="Medium" />
-            <Label Text="{Binding Id, Mode=TwoWay}" FontSize="Medium" />
 
-            <Label Text="Author" FontSize="Medium" />
-            <Label Text="{Binding Author, Mode=TwoWay}" FontSize="Medium" />
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Id" FontSize="Medium" />
+                <Label Text="{Binding Id, Mode=TwoWay}" FontSize="Medium" />
+
+                <Label Text="Author" FontSize="Medium" />
+                <Label Text="{Binding Author, Mode=TwoWay}" FontSize="Medium" />
             
-            <Label Text="Language" FontSize="Medium" />
-            <Label Text="{Binding Language, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="Language" FontSize="Medium" />
+                <Label Text="{Binding Language, Mode=TwoWay}" FontSize="Medium" />
 
-            <Label Text="Category" FontSize="Medium" />
-            <Label Text="{Binding Category, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="Category" FontSize="Medium" />
+                <Label Text="{Binding Category, Mode=TwoWay}" FontSize="Medium" />
            
             
-            <!--standard fields-->
-            <Label Text="Description" FontSize="Medium" />
-            <Label Text="{Binding Description, Mode=TwoWay}" FontSize="Medium" />
+                <!--standard fields-->
+                <Label Text="Description" FontSize="Medium" />
+                <Label Text="{Binding Description, Mode=TwoWay}" FontSize="Medium" />
 
-            <Label Text="IsActive" FontSize="Medium" />
-            <Label Text="{Binding IsActive, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="IsActive" FontSize="Medium" />
+                <Label Text="{Binding IsActive, Mode=TwoWay}" FontSize="Medium" />
 
-            <Label Text="LastModificationDate" FontSize="Medium" />
-            <Label Text="{Binding LastModificationDate, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="LastModificationDate" FontSize="Medium" />
+                <Label Text="{Binding LastModificationDate, Mode=TwoWay}" FontSize="Medium" />
 
-            <Label Text="LastModifiedBy" FontSize="Medium" />
-            <Label Text="{Binding LastModifiedBy, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="LastModifiedBy" FontSize="Medium" />
+                <Label Text="{Binding LastModifiedBy, Mode=TwoWay}" FontSize="Medium" />
 
-            <Label Text="CreationDate" FontSize="Medium" />
-            <Label Text="{Binding CreationDate, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="CreationDate" FontSize="Medium" />
+                <Label Text="{Binding CreationDate, Mode=TwoWay}" FontSize="Medium" />
 
-            <Label Text="CreatedBy" FontSize="Medium" />
-            <Label Text="{Binding  CreatedBy, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="CreatedBy" FontSize="Medium" />
+                <Label Text="{Binding  CreatedBy, Mode=TwoWay}" FontSize="Medium" />
 
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Delete" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="Delete" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
