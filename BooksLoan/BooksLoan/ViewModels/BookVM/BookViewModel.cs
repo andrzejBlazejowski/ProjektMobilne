@@ -5,13 +5,13 @@ using Xamarin.Forms;
 
 namespace BooksLoan.ViewModels.BookVM
 {
-    public class BookViewModel : AListViewModel<Author>
+    public class BookViewModel : AListViewModel<Book>
     {
         public BookViewModel(string title = "Book") : base(title)
         {
         }
 
-        public async override void OnItemSelected(Author item)
+        public async override void OnItemSelected(Book item)
         {
             if (item == null)
                 return;

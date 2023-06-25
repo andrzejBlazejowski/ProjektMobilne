@@ -36,7 +36,7 @@ namespace API.Model
         [Display(Name = "Narodowość")]
         public string? Nationality { get; set; }
 
-        public virtual ICollection<Rating>? Rating { get; set; }
-        public virtual ICollection<Loan>? Loan { get; set; }
+        public ICollection<Rating>? Rating { get; set; }
+        public ICollection<Loan>? Loan { get; set; }
     }
 }

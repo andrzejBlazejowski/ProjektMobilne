@@ -23,7 +23,7 @@ namespace API.Model
         [Display(Name = "ISBN")]
         public string Isbn { get; set; }
 
-        [MaxLength(50, ErrorMessage = "Data publikacj może zawierać maksymalnie 50 znaków ")]
+        [Column(TypeName = "datetime")]
         [Required(ErrorMessage = "Pole Data publikacj musi być wypełnione")]
         public DateTime PublishDate { get; set; }
 
@@ -35,12 +35,12 @@ namespace API.Model
         [Display(Name = "Język")]
         public string? Language { get; set; }
 
-        public int AuthorId { get; set; }
         [ForeignKey("AuthorId")]
-        public virtual Author? Author { get; set; }
-        public int CategoryId { get; set; }
+        public int? AuthorId { get; set; }
+        public Author? Author { get; set; }
         [ForeignKey("CategoryId")]
-        public virtual Category? Category { get; set; }
-        public virtual ICollection<Rating>? Rating { get; set; }
+        public int? CategoryId { get; set; }
+        public Category? Category { get; set; }
+        public ICollection<Rating>? Rating { get; set; }
     }
 }

@@ -9,6 +9,6 @@ namespace API.Model
         [Display(Name = "Nazwa")]
         public string Name { get; set; }
 
-        public virtual ICollection<Book>? Book { get; set; }
+        public ICollection<Book>? Book { get; set; }
     }
 }

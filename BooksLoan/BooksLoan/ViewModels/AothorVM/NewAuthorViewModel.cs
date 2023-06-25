@@ -12,6 +12,8 @@ namespace BooksLoan.ViewModels.AothorVM
         private string lastName;
         private string pseudonym;
         private string nationality;
+        private DateTime dob;
+        private string description;
         #endregion Fields
         #region Properties
         public string FirstName
@@ -39,6 +41,24 @@ namespace BooksLoan.ViewModels.AothorVM
             get => nationality;
             set => SetProperty(ref nationality, value);
         }
+        public string Description
+        {
+            get => description;
+            set => SetProperty(ref description, value);
+        }
+        public DateTime Dob
+        {
+            get => dob;
+            set => SetProperty(ref dob, value);
+        }
+        public DateTime MinDate
+        {
+            get => new DateTime(1923, 12, 31);
+        }
+        public DateTime MaxDate
+        {
+            get => DateTime.Now;
+        }
         #endregion Properties
         public NewAuthorViewModel()
             : base()
@@ -53,6 +73,14 @@ namespace BooksLoan.ViewModels.AothorVM
                 LastModificationDate = DateTime.Now,
                 LastModifiedBy = 0,
                 IsActive = true,
+
+                FirstName = FirstName,
+                LastName = LastName,
+                MiddleName = MiddleName,
+                Pseudonym = Pseudonym,
+                Nationality = Nationality,
+                Description = Description,
+                Dob = Dob.ToString(),
             };
         }
         public override bool ValidateSave()

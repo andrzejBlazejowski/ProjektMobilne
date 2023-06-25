@@ -4,7 +4,7 @@ using System;
 
 namespace BooksLoan.ViewModels.CategoryVM
 {
-    public class NewCategoryViewModel : ANewViewModel<Author>
+    public class NewCategoryViewModel : ANewViewModel<Category>
     {
         #region Fields
         private string name;
@@ -27,15 +27,17 @@ namespace BooksLoan.ViewModels.CategoryVM
             : base()
         {
         }
-        public override Author SetItem()
+        public override Category SetItem()
         {
-            return new Author
+            return new Category
             {
                 CreationDate = DateTime.Now,
                 CreatedBy = 0,
                 LastModificationDate = DateTime.Now,
                 LastModifiedBy = 0,
                 IsActive = true,
+                Name = Name,
+                Description = Description
             };
         }
         public override bool ValidateSave()

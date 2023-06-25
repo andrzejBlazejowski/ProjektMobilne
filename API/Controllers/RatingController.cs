@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using API.Data;
 using API.Model;
+using API.Helpers;
 
 namespace API.Controllers
 {
@@ -24,7 +25,15 @@ namespace API.Controllers
           {
               return NotFound();
           }
-            return await _context.Rating.ToListAsync();
+
+            var rating = await _context.Rating.ToListAsync();
+
+            rating.ForEach((rating) =>
+            {
+                rating = associationsHelper.getRatingWithAssociations(rating, _context);
+            });
+
+            return rating;
         }
 
         // GET: api/Rating/5
@@ -41,6 +50,8 @@ namespace API.Controllers
             {
                 return NotFound();
             }
+
+            rating = associationsHelper.getRatingWithAssociations(rating, _context);
 
             return rating;
         }
@@ -87,6 +98,8 @@ namespace API.Controllers
           }
             _context.Rating.Add(rating);
             await _context.SaveChangesAsync();
+
+            rating = associationsHelper.getRatingWithAssociations(rating, _context);
 
             return CreatedAtAction("GetRating", new { id = rating.Id }, rating);
         }

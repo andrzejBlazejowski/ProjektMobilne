@@ -20,7 +20,6 @@ namespace BooksLoan.ViewModels.AothorVM
 
         public override void GoToAddPage()
         {
-            var name = nameof(AuthorNewPage);
             Shell.Current.GoToAsync(nameof(AuthorNewPage));
         }
     }

@@ -4,7 +4,7 @@ using System;
 
 namespace BooksLoan.ViewModels.LoanVM
 {
-    public class NewLoanViewModel : ANewViewModel<Author>
+    public class NewLoanViewModel : ANewViewModel<Loan>
     {
         #region Fields
         private DateTime loanDate;
@@ -32,15 +32,20 @@ namespace BooksLoan.ViewModels.LoanVM
             : base()
         {
         }
-        public override Author SetItem()
+        public override Loan SetItem()
         {
-            return new Author
+            return new Loan
             {
                 CreationDate = DateTime.Now,  
                 CreatedBy = 0,
                 LastModificationDate = DateTime.Now,
                 LastModifiedBy = 0,
                 IsActive = true,
+
+                LoanDate = LoanDate,
+                ReturnDate = ReturnDate,
+                FreeDate = FreeDate
+
             };
         }
         public override bool ValidateSave()

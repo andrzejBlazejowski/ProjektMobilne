@@ -1,20 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="{Binding Title}"
-             x:Class="BooksLoan.Views.BookV.BookNewPage">
+             x:Class="BooksLoan.Views.BookV.BookNewPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Book">
     <ContentPage.Content>
         <StackLayout>
 
             <StackLayout Spacing="3" Padding="15">
-                <Label Text="Author" FontSize="Medium" />
-                 <Entry Text="{Binding Author, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="Title" FontSize="Medium" />
+                <Entry Text="{Binding Title, Mode=TwoWay}" FontSize="Medium" />
 
+                <Label Text="SubTitle" FontSize="Medium" />
+                <Entry Text="{Binding SubTitle, Mode=TwoWay}" FontSize="Medium" />
+
+                <Label Text="ISBN" FontSize="Medium" />
+                <Entry Text="{Binding ISBN, Mode=TwoWay}" FontSize="Medium" />
+                
                 <Label Text="Language" FontSize="Medium" />
-                 <Entry Text="{Binding Language, Mode=TwoWay}" FontSize="Medium" />
+                <Entry Text="{Binding Language, Mode=TwoWay}" FontSize="Medium" />
 
-                <Label Text="Category" FontSize="Medium" />
-                 <Entry Text="{Binding Category, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="OrginalTitle" FontSize="Medium" />
+                <Entry Text="{Binding OrginalTitle, Mode=TwoWay}" FontSize="Medium" />
+
+                <Label Text="Publisher" FontSize="Medium" />
+                <Entry Text="{Binding Publisher, Mode=TwoWay}" FontSize="Medium" />
+
+                <Label Text="PublishDate" FontSize="Medium" />
+                <DatePicker MinimumDate="{Binding MinDate, Mode=OneWay}"
+                    MaximumDate="{Binding MaxDate, Mode=OneWay}"
+                    Date="{Binding PublishDate, Mode=TwoWay}" />
+
+
+                <Picker Title="Select Author"
+                    ItemsSource="{Binding Authors}"
+                    ItemDisplayBinding="{Binding LastName}"
+                    SelectedItem="{Binding SelectedAuthor}"
+                    FontSize="Medium" Margin="0" />
+
+                <Picker Title="Select Category"
+                    ItemsSource="{Binding Categories}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelectedCategory}"
+                    FontSize="Medium" Margin="0" />
                 
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>

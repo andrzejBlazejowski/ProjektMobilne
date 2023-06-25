@@ -5,14 +5,14 @@ namespace BooksLoan.ViewModels.RatingVM
     public class RatingDetailsViewModel : AItemDetailsViewModel<Rating>
     {
         #region Fields
-        private int value;
+        private int _value;
         private string notes;
         #endregion Fields
         #region Properties
         public int Value
         {
-            get => value;
-            set => SetProperty(ref value, value);
+            get => _value;
+            set => SetProperty(ref _value, value);
         }
         public string Notes
         {

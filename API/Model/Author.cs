@@ -30,6 +30,6 @@ namespace API.Model
         [Display(Name = "Narodowość")]
         public string? Nationality { get; set; }
 
-        public virtual ICollection<Book>? Book { get; set; }
+        public ICollection<Book>? Book { get; set; }
     }
 }

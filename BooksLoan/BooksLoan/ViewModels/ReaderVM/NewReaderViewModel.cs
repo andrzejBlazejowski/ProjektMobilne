@@ -65,6 +65,13 @@ namespace BooksLoan.ViewModels.ReaderVM
                 LastModificationDate = DateTime.Now,
                 LastModifiedBy = 0,
                 IsActive = true,
+
+                FirstName = FirstName,
+                LastName = LastName,
+                MiddleName = MiddleName,
+                Nick = Nick,
+                Email = Email,
+
             };
         }
         public override bool ValidateSave()

@@ -6,6 +6,7 @@ namespace API.Model
     public class BaseData
     {
         [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [MaxLength(250, ErrorMessage = "Opis może zawierać maksymalnie 250 znaków ")]

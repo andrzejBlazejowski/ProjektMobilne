@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using API.Data;
 using API.Model;
+using API.Helpers;
 
 namespace API.Controllers
 {
@@ -24,7 +25,15 @@ namespace API.Controllers
           {
               return NotFound();
           }
-            return await _context.Book.ToListAsync();
+          
+          var books = await _context.Book.ToListAsync();
+
+            books.ForEach((book) =>
+            {
+                book = associationsHelper.getBookWithAssociations(book, _context);
+            });
+
+            return books;
         }
 
         // GET: api/Book/5
@@ -55,6 +64,11 @@ namespace API.Controllers
                 return BadRequest();
             }
 
+            book.Author = null;
+
+
+            book.Category = null;
+
             _context.Entry(book).State = EntityState.Modified;
 
             try
@@ -84,9 +98,18 @@ namespace API.Controllers
           if (_context.Book == null)
           {
               return Problem("Entity set 'BooksAPIContext.Book'  is null.");
-          }
+            }
+
+            book.Author = null;
+        
+        
+            book.Category = null;
+
             _context.Book.Add(book);
             await _context.SaveChangesAsync();
+
+
+            book = associationsHelper.getBookWithAssociations(book, _context);
 
             return CreatedAtAction("GetBook", new { id = book.Id }, book);
         }

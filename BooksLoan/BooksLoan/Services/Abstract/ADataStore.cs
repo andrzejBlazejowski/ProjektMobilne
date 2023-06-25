@@ -19,7 +19,7 @@ namespace BooksLoan.Services.Abstract
                 };
 #endif
             var client = new HttpClient(handler);
-            _service = new BookLoanServices("https://localhost:7035", client);
+            _service = new BookLoanServices("https://localhost:7296", client);
         }
     }
 }

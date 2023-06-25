@@ -6,7 +6,6 @@
              Title="{Binding Title}"
              x:Class="BooksLoan.Views.BookV.BookPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Book" Command="{Binding AddItemCommand}" />
         <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
         </ContentPage.ToolbarItems>
 
