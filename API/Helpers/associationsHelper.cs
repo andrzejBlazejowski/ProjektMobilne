@@ -39,5 +39,22 @@ namespace API.Helpers
 
             return rating;
         }
+        public static Loan getLoanWithAssociations(Loan loan, BooksAPIContext _context)
+        {
+            if (loan.Book == null)
+            {
+                loan.Book = _context.Book.FirstOrDefault(book => book.Id == loan.BookId);
+                loan.Book = getBookWithAssociations(loan.Book, _context);
+            }
+            loan.Book.Rating = new List<Rating>();
+
+            if (loan.Reader == null)
+            {
+                loan.Reader = _context.Reader.FirstOrDefault(book => book.Id == loan.ReaderId);
+            }
+            loan.Reader.Rating = new List<Rating>();
+
+            return loan;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using API.Data;
 using API.Model;
+using API.Helpers;
 
 namespace API.Controllers
 {
@@ -24,7 +25,13 @@ namespace API.Controllers
           {
               return NotFound();
           }
-            return await _context.Loan.ToListAsync();
+          var loans = await _context.Loan.ToListAsync();
+            loans.ForEach((loan) =>
+            {
+                loan = associationsHelper.getLoanWithAssociations(loan, _context);
+            });
+
+            return loans;
         }
 
         // GET: api/Loan/5
@@ -41,6 +48,8 @@ namespace API.Controllers
             {
                 return NotFound();
             }
+
+            loan = associationsHelper.getLoanWithAssociations(loan, _context);
 
             return loan;
         }
@@ -87,6 +96,8 @@ namespace API.Controllers
           }
             _context.Loan.Add(loan);
             await _context.SaveChangesAsync();
+
+            loan = associationsHelper.getLoanWithAssociations(loan, _context);
 
             return CreatedAtAction("GetLoan", new { id = loan.Id }, loan);
         }
